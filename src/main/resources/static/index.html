@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Game</title>
+</head>
+<body>
+<form id="gameForm">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" required>
+
+    <label for="genero">Genero:</label>
+    <input type="text" id="genero" name="genero" required>
+
+    <button type="button" onclick="enviarGame()">Salvar Game</button>
+</form>
+
+<script>
+    function enviarGame() {
+        var title = document.getElementById("nome").value;
+        var genre = document.getElementById("genero").value;
+
+        var data = {
+            title: title,
+            genre: genre
+        };
+
+        fetch('http://localhost:8080/games', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Game salvo com sucesso:', data);
+        })
+        .catch(error => {
+            console.error('Erro ao salvar game:', error);
+        });
+    }
+</script>
+</body>
+</html>
