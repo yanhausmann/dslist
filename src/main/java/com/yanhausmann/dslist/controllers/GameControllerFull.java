@@ -33,7 +33,7 @@ public class GameControllerFull {
         game.setPlatform(gameDTO.getPlatform());
         game.setShortDescription(gameDTO.getShortDescription());
         game.setLongDescription((gameDTO.getLongDescription()));
-        game.setImgURL(gameDTO.getImgUrl());
+        game.setImgUrl(gameDTO.getImgUrl());
 
         Game savedGame = gameServiceFull.salvarGame(game);
         GameDTO savedGameDTO = new GameDTO(savedGame);

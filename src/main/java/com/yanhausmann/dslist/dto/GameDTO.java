@@ -27,7 +27,7 @@ public class GameDTO {
         genre = entity.getGenre();
         platform = entity.getPlatform();
         score = entity.getScore();
-        imgUrl = entity.getImgURL();
+        imgUrl = entity.getImgUrl();
         shortDescription = entity.getShortDescription();
         longDescription = entity.getLongDescription();
     }

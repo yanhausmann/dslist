@@ -92,11 +92,11 @@ public class Game {
         this.score = score;
     }
 
-    public String getImgURL() {
+    public String getImgUrl() {
         return imgUrl;
     }
 
-    public void setImgURL(String imgURL) {
+    public void setImgUrl(String imgUrl) {
         this.imgUrl = imgUrl;
     }
 
