@@ -1,7 +1,6 @@
 package com.yanhausmann.dslist.entities;
 
 import jakarta.persistence.*;
-import org.springframework.boot.autoconfigure.web.WebProperties;
 
 import java.util.Objects;
 
@@ -13,7 +12,7 @@ public class Game {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    private String title;
+    private String nome;
 
     @Column(name = "game_year")
     private Integer year;
@@ -32,10 +31,10 @@ public class Game {
     public Game(){
     }
 
-    public Game(long id, String title, Integer year, String genre, String platform, Double score,
+    public Game(long id, String nome, Integer year, String genre, String platform, Double score,
                 String imgUrl, String shortDescription, String longDescription) {
         this.id = id;
-        this.title = title;
+        this.nome = nome;
         this.year = year;
         this.genre = genre;
         this.platform = platform;
@@ -53,12 +52,12 @@ public class Game {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getNome() {
+        return nome;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public Integer getYear() {

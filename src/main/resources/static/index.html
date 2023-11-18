@@ -4,44 +4,59 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="https://kit.fontawesome.com/fc0108f52c.js" crossorigin="anonymous"></script>
+    <script src="scripts/script.js"></script>
     <title>Form Game</title>
 </head>
 <body>
-<form id="gameForm">
-    <label for="nome">Nome:</label>
-    <input type="text" id="nome" name="nome" required>
 
-    <label for="genero">Genero:</label>
-    <input type="text" id="genero" name="genero" required>
+<header class="header">
 
-    <button type="button" onclick="enviarGame()">Salvar Game</button>
+    <div class="container">
+
+        <div class="flex">
+
+            <nav>
+                <ul>
+                    <li><a href="#"><i class="fa-solid fa-gamepad" style="color: #f5f5f5;"></i></a></li>
+                    <li><a href="#">Novo Game</a></li>
+                    <li><a href="#">Galeria</a></li>
+                </ul>
+            </nav>
+        </div>
+
+    </div>
+
+</header>
+
+<form class="formulario" id="gameForm">
+    <label class="labels" for="nome">Título:</label>
+    <input class="inputs" type="text" id="nome" name="nome" placeholder="Título" required>
+
+    <label class="labels" for="genre">Gênero:</label>
+    <input class="inputs" type="text" id="genre" name="genre" placeholder="Gênero" required>
+
+    <label class="labels" for="year">Ano:</label>
+    <input class="inputs" type="text" id="year" name="year" placeholder="Ano" required>
+
+    <label class="labels" for="platform">Plataforma:</label>
+    <input class="inputs" type="text" id="platform" name="platform" placeholder="Plataforma" required>
+
+    <label class="labels" for="shortDescription">Descrição Curta:</label>
+    <input class="inputs" type="text" id="shortDescription" name="shortDescription" placeholder="Descrição" required>
+
+    <label class="labels" for="longDescription">Descrição Longa:</label>
+    <input class="inputs" type="text" id="longDescription" name="longDescription" placeholder="Descrição Longa" required>
+
+    <label class="labels" for="imgUrl">URL da Imagem:</label>
+    <input class="inputs" type="text" id="imgUrl" name="imgUrl" placeholder="URL da Imagem" required>
+
+    <button class="btn-send" type="button" onclick="enviarGame()">Salvar Game</button>
+
 </form>
 
-<script>
-    function enviarGame() {
-        var title = document.getElementById("nome").value;
-        var genre = document.getElementById("genero").value;
+<div id="mensagem"></div>
 
-        var data = {
-            title: title,
-            genre: genre
-        };
-
-        fetch('http://localhost:8080/games', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Game salvo com sucesso:', data);
-        })
-        .catch(error => {
-            console.error('Erro ao salvar game:', error);
-        });
-    }
-</script>
 </body>
 </html>

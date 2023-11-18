@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&family=Poppins:wght@200;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&family=Outfit:wght@900&family=Poppins:wght@200;600&display=swap');
+
+
+* {
+    font-family: 'Noto Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(-45deg, #531c0b, #13063b, #062d3b, #055643);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+    margin: 0;
+}
+
+.container{
+    max-width: 100%;
+    height: auto;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header {
+    width: 100%;
+    padding: 20px 4%;
+    margin-bottom: 2%;
+    background: linear-gradient(-45deg, #531c0b, #13063b, #062d3b, #055643);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+    box-shadow: 0px 10px 10px rgba(15, 14, 14, 0.516)
+}
+
+header i {
+    font-size: 30px;
+}
+
+header ul {
+    list-style-type: none;
+
+}
+
+header ul li {
+    display: inline-block;
+    margin: 0 40px;
+}
+
+header ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14pt;
+    font-weight: 600;
+}
+
+header ul li a:hover {
+    color: #00ff88;
+    transition: 0.3s ease-in-out;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.labels {
+    color: white;
+    font-size: 15px;
+    align-items: flex-start;
+    display: flex;
+    padding: 7px;
+}
+
+.inputs {
+    outline: none;
+    width: 30%;
+    height: 35px;
+    margin-bottom: 13px;
+    border-radius: 6px;
+    box-shadow: 0px 3px 7px 1px #00ff88b5;
+    background-color: rgb(16, 3, 29);
+    border: solid 1px #4ba37a;
+    opacity: 90%;
+    color: white
+
+}
+
+.formulario > input::placeholder {
+    padding-left: 10px;
+    opacity: 90%;
+}
+
+.btn-send {
+    width: 220px;
+    height: 45px;
+    margin-top: 30px;
+    border-radius: 15px;
+    outline: none;
+    text-decoration: none;
+    color: #436a9a;
+    background: #00ff88;
+    cursor: pointer;
+    box-shadow: 0px 5px 30px 5px #00ff8052;
+    border: solid 1px #4ba37a;
+    font-size: 12pt;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.btn-send {
+    transition: 1s;
+}
+
+.btn-send:hover {
+    width: 260px;
+    height: 65px;
+    transition: 1s ease-in-out;
+    font-size: 14pt;
+    box-shadow: 0px 50px 40px 10px black;
+}
+
+.btn-send::after {
+    animation: ring 1.5s infinite;
+}
+
+#mensagem {
+    display: none;
+}
+.sucesso {
+    color: green;
+}
+
+.erro {
+    color: red;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}

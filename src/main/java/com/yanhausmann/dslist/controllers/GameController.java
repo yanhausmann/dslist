@@ -1,5 +1,6 @@
 package com.yanhausmann.dslist.controllers;
 
+import com.yanhausmann.dslist.dto.GameDTO;
 import com.yanhausmann.dslist.dto.GameMinDTO;
 import com.yanhausmann.dslist.entities.Game;
 import com.yanhausmann.dslist.services.GameService;
@@ -26,14 +27,16 @@ public class GameController {
     @PostMapping
     public ResponseEntity<GameMinDTO> salvarJogo(@RequestBody GameMinDTO gameMinDTO) {
         Game game = new Game();
-        game.setTitle(gameMinDTO.getTitle());
-        game.setGenre(gameMinDTO.getTitle());
+        game.setNome(gameMinDTO.getNome());
+        game.setGenre(gameMinDTO.getNome());
+        game.setShortDescription(gameMinDTO.getShortDescription());
+        game.setYear(gameMinDTO.getYear());
 
         Game savedGame = gameService.salvarGame(game);
-
-        // Usando o construtor do GameMinDTO que obtém valores diretamente do Game
         GameMinDTO savedGameDTO = new GameMinDTO(savedGame);
 
         return new ResponseEntity<>(savedGameDTO, HttpStatus.CREATED);
     }
+
+
 }
