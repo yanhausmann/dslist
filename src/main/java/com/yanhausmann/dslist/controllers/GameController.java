@@ -1,6 +1,5 @@
 package com.yanhausmann.dslist.controllers;
 
-import com.yanhausmann.dslist.dto.GameDTO;
 import com.yanhausmann.dslist.dto.GameMinDTO;
 import com.yanhausmann.dslist.entities.Game;
 import com.yanhausmann.dslist.services.GameService;

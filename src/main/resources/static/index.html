@@ -1,65 +1,86 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/style.css">
-    <script src="https://kit.fontawesome.com/fc0108f52c.js" crossorigin="anonymous"></script>
-    <script src="script/script.js"></script>
-    <title>Form Game</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Your Gamelist</title>
 </head>
 <body>
+  
 
-<header class="header">
-
-    <div class="container">
-
-        <div class="flex">
-
-            <nav>
-                <ul>
-                    <li><a href="index.html"><i class="fa-solid fa-gamepad" style="color: #f5f5f5;"></i></a></li>
-                    <li><a href="index.html">Novo Game</a></li>
-                    <li><a href="pages/galeria.html">Galeria</a></li>
-                </ul>
-            </nav>
-        </div>
-
+  <header class="header">
+    <div class="logo" onclick="mostrarMenuOculto()">
+      <li><a><i class="fa-solid fa-gamepad"></i></a></li>
     </div>
-
+    <div class="flex">
+        <ul class="ulMenu">
+            <li><a class="newGame" href="#">Novo Game</a></li>
+            <li><a class="galery" href="#">Galeria</a></li>
+        </ul>
+    </div>
 </header>
 
-<form class="formulario" id="gameForm">
-    <label class="labels" for="nome">Título:</label>
-    <input class="inputs" type="text" id="nome" name="nome" placeholder="Título" required>
+<div class="menuOculto" id="menuOculto">
+    <a href="#"><i class="fa fa-github" aria-hidden="true"></i>  GitHub<br></a>
+    <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i> LinkedIn<br></a>
+    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i>  Instagram</a>
+</div>
 
-    <label class="labels" for="genre">Gênero:</label>
-    <input class="inputs" type="text" id="genre" name="genre" placeholder="Gênero" required>
+<div class="container-form">
+    <form class="formulario" id="gameForm">
+      <h5 class="info">Adicione as informações do jogo</h5>
+      <label class="labels" for="nome">Título:</label>
+      <input class="inputs" type="text" id="nome" name="nome" placeholder="Título" required>
 
-    <label class="labels" for="year">Ano:</label>
-    <input class="inputs" type="text" id="year" name="year" placeholder="Ano" required>
+      <label class="labels" for="genre">Gênero:</label>
+      <input class="inputs" type="text" id="genre" name="genre" placeholder="Gênero" required>
 
-    <label class="labels" for="platform">Plataforma:</label>
-    <input class="inputs" type="text" id="platform" name="platform" placeholder="Plataforma" required>
+      <label class="labels" for="year">Ano:</label>
+      <input class="inputs" type="text" id="year" name="year" placeholder="Ano" required>
 
-    <label class="labels" for="platform">Score (de 0 à 5):</label>
-    <input class="inputs" type="text" id="score" name="score" placeholder="Score" required>
+      <label class="labels" for="platform">Plataforma:</label>
+      <input class="inputs" type="text" id="platform" name="platform" placeholder="Plataforma" required>
 
-    <label class="labels" for="shortDescription">Descrição Curta:</label>
-    <input class="inputs" type="text" id="shortDescription" name="shortDescription" placeholder="Descrição" required>
+      <label class="labels" for="platform">Score (de 0 à 5):</label>
+      <input class="inputs" type="text" id="score" name="score" placeholder="Score" required>
 
-    <label class="labels" for="longDescription">Descrição Longa:</label>
-    <input class="inputs" type="text" id="longDescription" name="longDescription" placeholder="Descrição Longa" required>
+      <label class="labels" for="shortDescription">Descrição Curta:</label>
+      <input class="inputs" type="text" id="shortDescription" name="shortDescription" placeholder="Descrição" required>
 
-    <label class="labels" for="imgUrl">URL da Imagem:</label>
-    <input class="inputs" type="text" id="imgUrl" name="imgUrl" placeholder="URL da Imagem" required>
+      <label class="labels" for="longDescription">Descrição Longa:</label>
+      <input class="inputs" type="text" id="longDescription" name="longDescription" placeholder="Descrição Longa" required>
 
-    <button class="btn-send" type="button" onclick="enviarGame()">Salvar Game</button>
+      <label class="labels" for="imgUrl">URL da Imagem:</label>
+      <input class="inputs" type="text" id="imgUrl" name="imgUrl" placeholder="URL da Imagem" required>
 
-</form>
+      <!-- <button class="btn-send" type="button" onclick="enviarGame()">Salvar Game</button> -->
+      <button class="btn-send" type="button" onclick="enviarGame()">Salvar Game</button>
+      <footer class="rodape">developed by yan.hausmann | 2023</footer>
+  </form>
+  
+</div>
+<div class="cap-card" id="cap-card">
+  <div class="containerCard" id="containerCard">
+    <h5>Jogo salvo!</h5>
+    <div class="card-content">
+      <div class="image-container">
+        <img class="imagem" alt c ="Imagem">
+      </div>
+      <div class="card-saved">
+        <h2>Título</h2>
+        <hr>
+        <p>Descrição Lorem ipsum dor sit ametlLorem ipsum dolLorem ipsum dolLorem ipsum dolo, consecteturlit.cilis consectetur </p>
+      </div>
+    </div>
+  </div>
+</div>
 
-<div id="mensagem"></div>
 
+
+
+
+<script src="script/script.js"></script>
+<script src="https://kit.fontawesome.com/fc0108f52c.js" crossorigin="anonymous"></script>
 </body>
 </html>
